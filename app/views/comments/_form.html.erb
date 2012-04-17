@@ -1,4 +1,4 @@
-<%= form_for @comment, :html => { :class => 'form-horizontal' } do |f| %>
+<%= simple_form_for @comment, :html => { :class => 'form-horizontal' } do |f| %>
   <fieldset>
     <legend><%= controller.action_name.capitalize %> Comment</legend>
 
@@ -8,6 +8,11 @@
         <%= f.text_area :content, :class => 'text_area' %>
       </div>
     </div>
+
+    <%= f.input :content, :as => :text %>
+    <%= f.input :name, :as => :string %>
+    <%= f.input :email, :as => :email %>
+    <%= f.input :active, :as => :boolean %>
 
     <div class="control-group">
       <%= f.label :name, :class => 'control-label' %>
@@ -20,6 +25,20 @@
       <%= f.label :email, :class => 'control-label' %>
       <div class="controls">
         <%= f.text_field :email, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :commentable_id, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :commentable_id, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :commentable_type, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :commentable_type, :class => 'text_field' %>
       </div>
     </div>
 

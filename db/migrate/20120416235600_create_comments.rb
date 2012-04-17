@@ -4,6 +4,8 @@ class CreateComments < ActiveRecord::Migration
       t.text :content
       t.string :name
       t.string :email
+      t.string :commentable_id
+      t.string :commentable_type
       t.boolean :active, :default => true
 
       t.timestamps

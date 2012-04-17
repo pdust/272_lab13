@@ -13,6 +13,14 @@
 </p>
 
 <p>
+  <b>Comments</b>
+  <%= @photo.comments.each do |comment| %>
+    <p>
+      <%= comment.content %><br>
+    </p>
+  <% end %>
+</p>
+<p>
   <b>Active</b>: 
   <%= @photo.active ? "Yes" : "No" %>
 </p>
