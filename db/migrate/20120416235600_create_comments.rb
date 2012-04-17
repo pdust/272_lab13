@@ -4,7 +4,7 @@ class CreateComments < ActiveRecord::Migration
       t.text :content
       t.string :name
       t.string :email
-      t.boolean :active
+      t.boolean :active, :default => true
 
       t.timestamps
     end
