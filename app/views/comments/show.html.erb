@@ -1,0 +1,37 @@
+<h1>Comment</h1>
+
+<p>
+  <b>Content</b><br>
+  <%= @comment.content %>
+</p>
+
+<p>
+  <b>Name</b><br>
+  <%= @comment.name %>
+</p>
+
+<p>
+  <b>Email</b><br>
+  <%= @comment.email %>
+</p>
+
+<p>
+  <b>Commentable</b><br>
+  <%= @comment.commentable_id %>
+</p>
+
+<p>
+  <b>Commentable type</b><br>
+  <%= @comment.commentable_type %>
+</p>
+
+<p>
+  <b>Active</b><br>
+  <%= @comment.active %>
+</p>
+
+<div class="form-actions">
+  <%= link_to 'Back', comments_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_comment_path(@comment), :class => 'btn' %>
+  <%= link_to 'Delete', comment_path(@comment), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

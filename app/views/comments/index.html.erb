@@ -1,0 +1,26 @@
+<h1>Comments</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Content</th>
+      <th>Created at</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @comments.each do |comment| %>
+      <tr>
+        <td><%= comment.id %></td>
+        <td><%= link_to comment.content, comment_path(comment) %></td>
+        <td><%= comment.created_at %></td>
+        <td>
+          <%= link_to 'Edit', edit_comment_path(comment), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', comment_path(comment), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New', new_comment_path, :class => 'btn btn-primary' %>
